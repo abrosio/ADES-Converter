@@ -1,37 +1,40 @@
-ADES Converter
-Piccolo tool desktop (PyQt5) per convertire file fotometrici in un file testo formattato in ADES (o in formato personalizzato coerente alle specifiche usate nel programma).
-Semplifica il flusso da software di riduzione come CANOPUS e Tycho al formato pronto per l’uso.
-Autore: Antonino Brosio (ABObservatory L90)
+# 🌌 ADES Converter
 
-Cosa fa
-Legge automaticamente diversi formati di input:
-CSV/TXT con colonne JD, Mag, MagErr
+**ADES Converter** è un software desktop sviluppato in **Python (PyQt5)** da **Antonino Brosio (ABObservatory L90)**  
+per convertire automaticamente i file **fotometrici** provenienti da **CANOPUS** o **Tycho** in formato **ADES**  
+(“Astrometry Data Exchange Standard”) o in un formato testo personalizzato coerente con le specifiche.
 
-CANOPUS:
-ALCDEF (DATA=JD|MAG|ERR|…)
-Tabelle “Observations …” con colonne … O-CAvg Err
+---
 
-Tycho:
-“Fotometry” con header JD MAG ERR (spazi/tab)
-Converte il tempo JD in UTC ISO-8601 (YYYY-MM-DDThh:mm:ss[.xx]Z) con numero di decimali configurabile.
-Formatta magnitudine ed errore con decimali configurabili (ROUND_HALF_UP).
+## 🧩 Funzionalità principali
 
-Allinea le colonne in output:
-#obsTime mag magUnc
+- ✅ Rilevamento automatico del tipo di file:
+  - **CANOPUS**
+    - Formato **ALCDEF** (`DATA=JD|MAG|ERR|...`)
+    - Tabelle “**Observations**” con colonne `O-CAvg  Err`
+  - **Tycho**
+    - File “**Fotometry**” con header `JD  MAG  ERR`
+  - **CSV/TXT** standard con colonne `JD, Mag, MagErr`
+- 🕓 Conversione automatica del tempo **JD → UTC ISO-8601**
+  - Es. `2025-09-20T21:03:12.34Z`
+- 🎯 Impostazione del numero di **decimali** per data, magnitudine e errore
+- 💾 Generazione automatica del nome file in formato:
+YYYYMMDDUTC_<MPC><OGGETTO><NOSS>_<FILTRO>.txt
+Esempio: `20250920UTC_L90_2025FA22_40_CLEAR.txt`
+- 🎨 Interfaccia moderna e chiara, con supporto per **tema scuro (qdarkstyle)**
+- 🧠 Memorizzazione automatica dei campi MPC, Oggetto, Filtro e preferenze
+- 📂 Supporto **drag & drop** del file direttamente nella finestra
+- 🔒 Campo percorso non scrivibile, solo selezionabile tramite “Apri File” o drag
 
-Autocompone il nome del file di output come:
-YYYYMMDDUTC_<MPC>_<OGGETTO_SENZA_SPAZI>_<NOSS>_<FILTRO>.txt
-(es.: 20250920UTC_L90_2025FA22_40_CLEAR.txt)
+---
 
-Drag & Drop: trascina un file sul campo in alto per caricarlo.
-Campi memorizzati: MPC, Oggetto osservato, Filtro e preferenze sui decimali restano salvati per i successivi avvii.
-Tema scuro opzionale (qdarkstyle, se presente).
+## 🖥️ Requisiti
 
-Requisiti
-Python 3.9+ (consigliato)
-
-Librerie:
+- **Python 3.9+**
+- Librerie richieste:
+```bash
 pip install PyQt5 astropy qdarkstyle
 
-Crediti
-Sviluppato da Antonino Brosio (ABObservatory L90).
+
+## 👨‍💻 Autore
+Sviluppato da: Antonino Brosio
