@@ -34,7 +34,7 @@ Esempio: `20250920UTC_L90_2025FA22_40_CLEAR.txt`
 - Librerie richieste:
 ```bash
 pip install PyQt5 astropy qdarkstyle
+```bash
 
-
-## 👨‍💻 Autore
+👨‍💻 Autore
 Sviluppato da: Antonino Brosio
