@@ -69,9 +69,8 @@ python main.py
 
 ## 🧠 Note
 
-- Il programma **blocca la finestra** alla dimensione predefinita.  
 - Supporta formati multipli (CANOPUS, Tycho, CSV) **senza dover specificare nulla manualmente**.  
-- L’output è compatibile con la struttura **ADES** per l’invio dati a centri fotometrici o per uso personale.
+- L’output è compatibile con la struttura **ADES** per l’invio dati a ricercatori o per uso personale.
 
 ---
 
